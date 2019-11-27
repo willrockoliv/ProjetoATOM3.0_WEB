@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function setName(fullName) {
+	name = fullName.value;
+	document.getElementById("firstName").value = name.split(" ")[0];
+	document.getElementById("lastName").value = name.split(" ").pop();
+}
+</script>
+</head>
+<body>
+<h1>FTT</h1>
+<h2>Person</h2>
+
+<form method="get" action="PersonAPI">
+    <fieldset>
+    <legend>Person Info</legend>
+	<p>ID: <input type="number" name="pid" id="pid" required></p>
+	<p>Name: <input type="text" name="pname" id="pname" required placeholder="Informe o nome completo" onchange="setName(this);"></p>
+	<p>Nome e sobrenome:<input type="text" name="firstName" id="firstName" disabled>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="lastName" id="lastName" disabled> </p>
+	<p>Secreto: <input type="hidden" name="secreto" id="secreto"></p>
+	<p>Nascimento: <input type="date" name="pdate" id="pdate" required></p>
+	<p>E-Mail: <input type="email" name="pemail" id="pemail" required></p>
+	<p>Color: <input type="color" name="pcolor" id="pcolor" required></p>
+	
+	<p>CPF: <input type="text" name="pcpf" id="pcpf" required 
+	        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"></p>
+	        
+	<p>RG: <input type="text" name="prg" id="prg" required
+	        pattern="\d{2}\.\d{3}\.\d{3}-\d{1}"></p>
+    <p>	        
+	<input type="radio" name="psize" id="Grande" value="G"> Grande<BR>
+	<input type="radio" name="psize" id="Médio" value="M"> Médio<BR>
+	<input type="radio" name="psize" id="Pequeno" value="P"> Pequeno<BR>
+	</p>
+	<p>Senha: <input type="password" name="pwd" id="pwd" required></p>        
+    <input type="submit">
+    </fieldset>
+
+
+</form>
+<a href="https://books.goalkicker.com/HTML5Book/"> Referência: HTML5 Notes for Professionals</a>
+</body>
+</html>
